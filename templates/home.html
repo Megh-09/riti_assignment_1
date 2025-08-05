@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Input</title>
+    <script>
+        window.onload = function() {
+            params = new URLSearchParams(window.location.search);
+            message = params.get("message");
+
+            if (message === "success") {
+                alert("Number added successfully.");
+            } else if (message === "error") {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        };
+    </script>
+</head>
+<body>
+    <h2>Enter a Number</h2>
+
+    <form method="POST" action="/data">
+        <input type="text" name="number" placeholder="Enter number here">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p><a href="/output">See All Numbers (JSON)</a></p>
+</body>
+</html>
